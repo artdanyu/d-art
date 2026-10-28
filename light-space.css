@@ -1,0 +1,42 @@
+/* A single decorative canvas. Content, card surfaces and hero artwork stay intact. */
+.page-landing main { position:relative; isolation:isolate; }
+.page-landing .light-space { position:absolute; inset:0; z-index:-1; overflow:hidden; pointer-events:none; background:#fff; }
+.page-landing .light-space__color { position:absolute; inset:0; background:
+  radial-gradient(ellipse 64% 480px at 8% var(--benefits-y),#d9effba1,transparent 86%),
+  radial-gradient(ellipse 56% 450px at 95% var(--scenarios-y),#ded6f96b,transparent 83%),
+  radial-gradient(ellipse 70% 600px at 87% var(--direction-y),#e6d8f5a8,transparent 83%),
+  radial-gradient(ellipse 45% 490px at 1% var(--direction-y),#e4edfa80,transparent 87%),
+  radial-gradient(ellipse 65% 480px at 16% var(--process-y),#d5eafa99,transparent 88%),
+  radial-gradient(ellipse 50% 550px at 94% var(--work-y),#dedbf49c,transparent 85%),
+  radial-gradient(ellipse 65% 620px at 1% var(--products-y),#e4d8eb80,transparent 86%),
+  radial-gradient(ellipse 57% 620px at 92% var(--products-end-y),#d9eaf799,transparent 86%),
+  radial-gradient(ellipse 65% 500px at 16% var(--cta-y),#ebd9f096,transparent 85%),
+  radial-gradient(ellipse 65% 560px at 95% var(--cta-y),#d9e8f8a6,transparent 85%);
+}
+.page-landing .light-space__wave { position:absolute; left:-12%; width:124%; height:640px; overflow:visible; }
+.page-landing .light-space__wave--one { top:calc(var(--direction-top) - 330px); opacity:.66; }
+.page-landing .light-space__wave--two { top:calc(var(--work-top) - 310px); transform:scaleX(-1); opacity:.7; }
+.page-landing .light-space__wave--three { top:calc(var(--products-end-y) - 220px); opacity:.55; transform:scaleY(-1); }
+.page-landing .light-space__wave--four { top:calc(var(--cta-top) - 270px); opacity:.55; transform:scaleX(-1); }
+/* Override section canvases only; transparent cards reveal the continuous light below. */
+.page-landing main > section.section#benefits,
+.page-landing main > section.section#scenarios,
+.page-landing main > section.section#direction,
+.page-landing main > section.section#process,
+.page-landing main > section.section#work,
+.page-landing main > section.section#faq,
+.page-landing main > section.section#cta { background:transparent; border-top-color:transparent; }
+@media(max-width:640px) {
+  .page-landing .light-space__color { background:
+    radial-gradient(ellipse 120% 700px at 0 var(--benefits-y),#dceffb91,transparent 83%),
+    radial-gradient(ellipse 110% 850px at 100% var(--direction-y),#e6d9f58c,transparent 85%),
+    radial-gradient(ellipse 120% 650px at 0 var(--process-y),#d8eefa8c,transparent 84%),
+    radial-gradient(ellipse 115% 800px at 100% var(--work-y),#e3dcf380,transparent 85%),
+    radial-gradient(ellipse 110% 800px at 0 var(--products-y),#eaddec85,transparent 86%),
+    radial-gradient(ellipse 115% 850px at 100% var(--products-end-y),#dcebf88c,transparent 86%),
+    radial-gradient(ellipse 120% 580px at 0 var(--cta-y),#e9d8f18c,transparent 85%),
+    radial-gradient(ellipse 110% 600px at 100% var(--cta-y),#daeaf885,transparent 85%);
+  }
+  .page-landing .light-space__wave { width:210%; left:-55%; height:540px; }
+  .page-landing .light-space__wave--one,.page-landing .light-space__wave--three { opacity:.45; }
+}

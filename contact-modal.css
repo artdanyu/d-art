@@ -1,0 +1,17 @@
+.contact-modal { width:min(460px,calc(100% - 32px)); max-height:calc(100dvh - 40px); overflow:auto; margin:auto; padding:36px 28px 28px; border:1px solid #fff; border-radius:28px; background:radial-gradient(ellipse at 95% 0%,#e3ddf8a6,transparent 65%),linear-gradient(135deg,#fff,#f3f6fc); color:#49365f; box-shadow:0 25px 90px #34234c30; }
+.contact-modal::backdrop { background:#33264740; backdrop-filter:blur(7px); }
+.contact-modal h2 { margin:0 30px 10px 0; font:500 28px/1.2 Inter,sans-serif; letter-spacing:-.04em; }
+.contact-modal>p { margin:0 0 25px; color:#87798f; font-size:14px; line-height:1.6; }
+.contact-modal__close { position:absolute; right:16px; top:14px; width:36px; height:36px; border:1px solid #fff; border-radius:50%; background:#ffffff9c; color:#857392; font-size:25px; cursor:pointer; }
+.contact-modal__action { display:flex; align-items:center; gap:14px; padding:18px; margin-top:12px; border:1px solid #fff; border-radius:19px; text-decoration:none; background:#ffffffa6; box-shadow:0 5px 18px #8b6aaf0c; transition:transform .2s,box-shadow .2s; }
+.contact-modal__action--telegram { background:linear-gradient(120deg,#e9dff9,#e4eafa); }
+.contact-modal__icon { width:38px; height:38px; flex-shrink:0; display:grid; place-items:center; border:1px solid #fff; border-radius:12px; background:#ffffff85; color:#8057a6; }
+.contact-modal__icon svg { width:23px; height:23px; }
+.contact-modal__action strong { display:block; font-size:15px; font-weight:500; color:#624582; }
+.contact-modal__action small { display:block; margin-top:5px; font-size:13px; color:#8b789d; }
+.contact-modal__arrow { margin-left:auto; color:#8762aa; font-size:23px; }
+.contact-modal :focus-visible { outline:2px solid #9671bd; outline-offset:4px; }
+body.contact-modal-open { overflow:hidden; }
+@media(hover:hover) { .contact-modal__action:hover { transform:translateY(-2px); box-shadow:0 8px 24px #8b6aaf20; } }
+@media(max-width:400px) { .contact-modal { padding:32px 19px 22px; } .contact-modal__action { padding:15px 12px; gap:10px; } .contact-modal__action strong { font-size:14px; } }
+@media(prefers-reduced-motion:reduce) { .contact-modal__action { transition:none; } }

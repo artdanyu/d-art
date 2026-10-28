@@ -1,0 +1,46 @@
+/* Only the closing FAQ and CTA sections. Native details remain usable without JS. */
+.page-landing #faq.closing-faq { padding: 80px 0 64px; background: linear-gradient(180deg,#faf9fd,#f4f1fa); scroll-margin-top: 100px; }
+#faq .closing-faq-layout { display: grid; grid-template-columns: .75fr 1.5fr; gap: 70px; align-items: start; }
+.closing-eyebrow { font-size: 10px; letter-spacing: .15em; color: #9b82ad; margin-bottom: 21px; }
+#faq .closing-faq-heading { padding-top: 18px; }
+#faq .closing-faq-heading h2 { font-weight: 500; font-size: clamp(35px,3.4vw,48px); line-height: 1.1; letter-spacing: -.045em; color: #30263e; }
+#faq .closing-faq-heading > p:last-child { color: #8a7c94; font-size: 14px; line-height: 1.8; margin-top: 22px; }
+#faq .closing-accordion { display: grid; gap: 11px; }
+#faq .closing-question { border: 1px solid #fff; border-radius: 20px; background: linear-gradient(130deg,#ffffffc9,#ffffff6b); box-shadow: 0 5px 20px #6c4f8c06,inset 0 1px 0 #fff; backdrop-filter: blur(12px); transition: background .3s,box-shadow .3s; }
+#faq .closing-question summary { display: grid; grid-template-columns: 23px 1fr 26px; gap: 17px; align-items: center; padding: 23px 24px; list-style: none; cursor: pointer; font-size: 14px; line-height: 1.55; color: #574564; }
+#faq .closing-question summary::-webkit-details-marker { display: none; }
+#faq .closing-question summary::marker { content: ''; }
+#faq .closing-question-number { color: #b3a1c3; font-size: 10px; letter-spacing: .05em; }
+#faq .closing-question-toggle { display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid #e2d8ed; border-radius: 50%; position: relative; }
+#faq .closing-question-toggle::before,#faq .closing-question-toggle::after { content: ''; position: absolute; width: 8px; height: 1px; background: #9c7db8; transition: transform .3s; }
+#faq .closing-question-toggle::after { transform: rotate(90deg); }
+#faq .closing-question[open] .closing-question-toggle::after { transform: rotate(0); }
+#faq .closing-question[open] { background: linear-gradient(130deg,#fff,#f3edfc9c); box-shadow: 0 8px 25px #79569c09; }
+#faq .closing-answer { padding: 0 66px 25px 64px; color: #85758e; font-size: 13px; line-height: 1.85; }
+#faq .closing-question[open] .closing-answer { animation: closing-answer-in .25s ease-out; }
+@keyframes closing-answer-in { from { opacity: .3; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+#faq .closing-question summary:focus-visible { outline: 2px solid #9672b5; outline-offset: 4px; border-radius: 18px; }
+.page-landing #cta.closing-cta { background: linear-gradient(180deg,#f4f1fa,#f9f7fd); padding: 25px 0 75px; }
+#cta .closing-panel { position: relative; overflow: hidden; text-align: center; border-radius: 36px; padding: 69px 30px 65px; border: 1px solid #fff; background: radial-gradient(ellipse at 75% 20%,#e3e7fb99,transparent 55%),radial-gradient(ellipse at 20% 80%,#e5d6f499,transparent 60%),linear-gradient(130deg,#ffffffc9,#f7f2ff99); box-shadow: 0 16px 45px -25px #6f4d9130,inset 0 1px 0 #fff; }
+#cta .closing-panel h2 { max-width: 780px; margin: 0 auto; font-size: clamp(32px,3.6vw,50px); font-weight: 500; letter-spacing: -.045em; line-height: 1.13; color: #30243e; text-wrap: balance; }
+#cta .closing-description { max-width: 590px; margin: 25px auto 32px; color: #85748e; font-size: 14px; line-height: 1.85; text-wrap: pretty; }
+#cta .closing-button { display: inline-flex; align-items: center; justify-content: center; gap: 29px; min-height: 50px; padding: 13px 25px; border: 1px solid #ffffffb8; border-radius: 30px; font: 500 14px/1.4 "Inter",sans-serif; color: #fff; background: linear-gradient(110deg,#583198,#8969b8); box-shadow: 0 0 0 5px #ffffff70,0 6px 15px #77509f29,inset 0 1px 1px #ffffff66; cursor: pointer; transition: transform .3s,box-shadow .3s; }
+#cta .closing-button span { font-size: 20px; font-weight: 400; }
+#cta .closing-button:focus-visible { outline: 2px solid #77509f; outline-offset: 8px; }
+@media(hover:hover) and (pointer:fine) { #faq .closing-question:hover { box-shadow: 0 8px 25px #79569c12; } #cta .closing-button:hover { transform: translateY(-2px); box-shadow: 0 0 0 5px #ffffffa6,0 10px 20px #77509f35; } }
+@media(max-width:900px) { #faq .closing-faq-layout { grid-template-columns: 1fr; gap: 30px; } #faq .closing-faq-heading h2 br { display: none; } #faq .closing-faq-heading > p:last-child br { display: none; } }
+@media(max-width:640px) {
+  .page-landing #faq.closing-faq { padding: 48px 0 35px; }
+  #faq .container,#cta .container { width: calc(100% - 32px); }
+  #faq .closing-faq-heading { padding-top: 0; }
+  #faq .closing-faq-heading h2 { font-size: 34px; }
+  #faq .closing-faq-heading > p:last-child { margin-top: 15px; }
+  #faq .closing-question summary { grid-template-columns: 17px 1fr 24px; gap: 10px; padding: 19px 15px; font-size: 13px; }
+  #faq .closing-answer { padding: 0 18px 21px 42px; font-size: 12px; }
+  .page-landing #cta.closing-cta { padding: 15px 0 48px; }
+  #cta .closing-panel { padding: 42px 21px; border-radius: 28px; }
+  #cta .closing-panel h2 { font-size: 32px; }
+  #cta .closing-description { font-size: 13px; margin: 22px auto 28px; }
+  #cta .closing-button { width: 100%; max-width: 270px; }
+}
+@media(prefers-reduced-motion:reduce) { #faq .closing-question,#faq .closing-question-toggle::after,#cta .closing-button { transition: none; } #faq .closing-question[open] .closing-answer { animation: none; } #cta .closing-button:hover { transform: none; } }

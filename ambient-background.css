@@ -1,0 +1,30 @@
+/* One continuous canvas: measured section positions adapt to mobile and open FAQ items. */
+body.page-landing { background: #f6f4fb; }
+.page-landing main { position: relative; isolation: isolate; }
+.page-landing .ambient-space {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden;
+  --hero-height: 1000px; --direction-y: 1500px; --speed-y: 2400px; --work-y: 3400px; --faq-y: 4400px; --cta-y: 5000px;
+  background:
+    radial-gradient(ellipse at 88% 4%,#e4f1fa80,transparent 42%) top / 100% var(--hero-height) no-repeat,
+    linear-gradient(180deg,#e8eaff 0%,#dce1ff 24%,#f4f3ff 49%,#ffffff00 100%) top / 100% var(--hero-height) no-repeat,
+    radial-gradient(ellipse 75% 620px at 15% var(--direction-y),#e9dff880,transparent 78%),
+    radial-gradient(ellipse 80% 650px at 85% var(--speed-y),#d9ecf9a6,transparent 80%),
+    radial-gradient(ellipse 85% 750px at 8% var(--work-y),#e2e8fba6,transparent 78%),
+    radial-gradient(ellipse 65% 680px at 92% var(--work-y),#e8def585,transparent 80%),
+    radial-gradient(ellipse 80% 600px at 15% var(--faq-y),#ffffffde,transparent 85%),
+    radial-gradient(ellipse 70% 570px at 20% var(--cta-y),#e5d8f685,transparent 80%),
+    radial-gradient(ellipse 65% 630px at 95% var(--cta-y),#dcecf985,transparent 80%),
+    linear-gradient(180deg,#fff 0%,#fdfcff 30%,#fbfaff 65%,#f6f4fb 100%);
+}
+.page-landing .ambient-waves { display: block; position: absolute; inset: 0; width: 100%; height: 100%; opacity: .65; }
+.page-landing main > section#hero,
+.page-landing main > section#direction,
+.page-landing main > section#ai-speed,
+.page-landing main > section#work,
+.page-landing main > section#faq,
+.page-landing main > section#cta { background: transparent; border-top-color: transparent; }
+.page-landing main > section#hero { isolation: auto; }
+.page-landing main > .section::before,
+.page-landing main > .section::after { display: none; }
+.page-landing .site-footer { background: transparent; border-top-color: transparent; }
+@media(max-width:640px) { .page-landing .ambient-waves { opacity: .4; } }

@@ -1,0 +1,49 @@
+# Local previews, screenshots, generated prompts and backups
+/Backup/
+/output/
+/tmp/
+/temp/
+*.bak
+*.orig
+*.tmp
+*.log
+
+# Local agent and editor settings
+/.codex/
+/.agents/
+/.idea/
+/.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Separate backend/bot repository; not part of the static landing page
+/agent_system/
+
+# Secrets (keep safe configuration templates)
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies and runtime data
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+coverage/
+
+# Website HTML, CSS, JS, Images/ and ru/ are intentionally tracked.

@@ -1,0 +1,51 @@
+/* Isolated services section. Cards describe capabilities, not navigation. */
+.page-landing #direction.directions-premium { padding: 76px 0 90px; background: linear-gradient(180deg,#fff,#f4f2fb 42%,#f7f6fc); scroll-margin-top: 95px; }
+#direction .directions-heading { margin-bottom: 34px; text-align: center; }
+#direction .directions-heading h2 { color: #272139; font-size: clamp(32px,3.3vw,46px); font-weight: 500; letter-spacing: -.045em; }
+#direction .directions-heading p { color: #777084; font-size: 15px; margin-top: 12px; }
+#direction .directions-heading .directions-kicker { color: #8a76a2; font-size: 10px; letter-spacing: .16em; margin: 0 0 15px; }
+#direction .directions-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+#direction .direction-card { position: relative; display: flex; flex-direction: column; overflow: hidden; min-width: 0; padding: 10px; border: 1px solid #fff; border-radius: 30px; background: #ffffff9c; box-shadow: 0 5px 24px #55407707,inset 0 1px 0 #fff; transition: transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease; }
+#direction .direction-art { position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 22px; height: 210px; background: radial-gradient(ellipse at 50% 75%,#d4c6fb90,transparent 65%),linear-gradient(135deg,#eeedf9,#e7e5f7); }
+#direction .direction-art img { width: 210px; max-width: 100%; height: 210px; object-fit: contain; mix-blend-mode: multiply; transition: transform .7s cubic-bezier(.22,1,.36,1); }
+#direction .direction-copy { display: flex; flex-direction: column; flex: 1; padding: 22px 17px 18px; }
+#direction .direction-copy h3 { color: #30263e; font-size: 22px; font-weight: 500; line-height: 1.25; letter-spacing: -.035em; }
+#direction .direction-copy p { margin-top: 12px; margin-bottom: 22px; color: #787180; font-size: 13px; line-height: 1.7; max-width: 38ch; }
+#direction .direction-tags { margin-top: auto; padding-top: 15px; border-top: 1px solid #e8e1ef; color: #8b729f; font-size: 10px; letter-spacing: .02em; }
+#direction .direction-label { display: block; margin-bottom: 10px; font-size: 9px; color: #8d73a4; letter-spacing: .11em; }
+#direction .direction-card--ai { grid-column: 1/-1; flex-direction: row-reverse; min-height: 295px; background: linear-gradient(110deg,#fffdfef0,#f4f0ffb3); }
+#direction .direction-card--ai .direction-art { width: 46%; height: auto; min-height: 275px; background: radial-gradient(ellipse at center,#d6c8fa90,transparent 68%); }
+#direction .direction-card--ai .direction-art img { width: 350px; height: 310px; }
+#direction .direction-card--ai .direction-copy { padding: 27px 34px; align-self: center; }
+#direction .direction-card--ai h3 { font-size: clamp(27px,3vw,38px); max-width: 17ch; }
+#direction .direction-card--ai p { max-width: 48ch; font-size: 14px; }
+#direction .direction-card--ai .direction-tags { max-width: 360px; }
+@media (hover:hover) and (pointer:fine) {
+  #direction .direction-card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px -15px #7554a52b; }
+  #direction .direction-card:hover .direction-art img { transform: translateY(-6px) rotate(-3deg); }
+}
+@media (max-width:900px) and (min-width:641px) {
+  #direction .direction-copy { padding: 19px 9px 13px; }
+  #direction .direction-copy h3 { font-size: 18px; }
+  #direction .direction-art { height: 170px; }
+  #direction .direction-art img { width: 170px; height: 170px; }
+  #direction .direction-card--ai .direction-copy { padding: 24px; }
+  #direction .direction-tags { font-size: 9px; }
+}
+@media (max-width:640px) {
+  .page-landing #direction.directions-premium { padding: 52px 0 60px; }
+  #direction .container { width: calc(100% - 32px); }
+  #direction .directions-heading { text-align: left; margin-bottom: 26px; }
+  #direction .directions-heading p { font-size: 14px; max-width: 32ch; }
+  #direction .directions-grid { grid-template-columns: 1fr; gap: 16px; }
+  #direction .direction-card--ai { flex-direction: column; }
+  #direction .direction-card--ai .direction-art { width: 100%; height: 220px; min-height: 0; background: radial-gradient(ellipse at 50% 75%,#d4c6fb90,transparent 65%),linear-gradient(135deg,#eeedf9,#e7e5f7); }
+  #direction .direction-card--ai .direction-art img { width: 220px; height: 220px; }
+  #direction .direction-card--ai .direction-copy { padding: 23px 17px 20px; width: 100%; }
+  #direction .direction-card--ai h3 { font-size: 27px; max-width: 17ch; }
+  #direction .direction-copy h3 { font-size: 23px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #direction .direction-card,#direction .direction-art img { transition: none; }
+  #direction .direction-card:hover,#direction .direction-card:hover .direction-art img { transform: none; }
+}

@@ -1,0 +1,34 @@
+/* Homepage header, preserving its existing fixed scroll behavior. */
+.page-landing .topbar.premium-header {
+  top: max(22px,env(safe-area-inset-top,0px));
+  width: min(1256px,calc(100% - 80px));
+  padding: 11px 15px 11px 24px; min-height: 78px; border-radius: 48px;
+  border: 1px solid #ffffffd9;
+  background: linear-gradient(120deg,#ffffffe0,#f2efffb8 55%,#ffffffb8);
+  backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 10px 30px -16px #70639645,inset 0 1px 0 #fff;
+}
+.page-landing .premium-header .brand { display: inline-flex; align-items: center; gap: 9px; flex-shrink: 0; }
+.premium-header .dart-symbol { display: block; width: 48px; height: 54px; object-fit: contain; }
+.premium-header .dart-wordmark { font: 600 29px/1.15 "Inter",sans-serif; color: #45206b; letter-spacing: -.045em; white-space: nowrap; background: linear-gradient(100deg,#35104f 0%,#55277e 38%,#8b65b7 72%,#b39ad9 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.premium-header .dart-wordmark > span { color: inherit; }
+@media (forced-colors:active) { .premium-header .dart-wordmark { background:none; -webkit-text-fill-color:CanvasText; } }
+.page-landing .premium-header .nav { gap: 20px; flex-wrap: nowrap; }
+.page-landing .premium-header .nav > a { font-size: 14px; color: #51466b; padding: 12px 9px; border-radius: 24px; transition: color .25s,background .25s; }
+.premium-header .header-contact { display: inline-flex; align-items: center; justify-content: center; gap: 24px; padding: 14px 24px; min-height: 52px; border: 1px solid #ffffffa8; border-radius: 32px; background: linear-gradient(115deg,#4b237f,#8855d2); color: #fff; font: 500 14px/1.4 "Inter",sans-serif; box-shadow: inset 0 2px 1px #d2a3ff70,0 4px 12px #7651ac24; cursor: pointer; transition: transform .25s,box-shadow .25s; }
+.premium-header .header-contact > span { font-size: 21px; line-height: 1; }
+.premium-header .nav-toggle { border-radius: 50%; width: 48px; height: 48px; background: #ffffffb8; box-shadow: 0 3px 15px #6953890d; }
+.premium-header .nav-toggle__bar { background: #554579; }
+.premium-header :is(a,button):focus-visible { outline: 2px solid #8154bd; outline-offset: 4px; }
+@media(hover:hover) { .page-landing .premium-header .nav > a:hover { color: #7343a6; background: #ffffff91; } .premium-header .header-contact:hover { transform: translateY(-1px); box-shadow: inset 0 2px 1px #d2a3ff70,0 7px 18px #7651ac38; } }
+@media(max-width:1100px) and (min-width:1024px) { .page-landing .premium-header .nav { gap: 10px; } .premium-header .header-contact { padding-inline: 18px; gap: 15px; } }
+@media(max-width:1023px) {
+  .page-landing .topbar.premium-header { width: calc(100% - 32px); top: max(12px,env(safe-area-inset-top,0px)); padding: 7px 10px 7px 15px; min-height: 68px; }
+  .premium-header .dart-symbol { width: 41px; height: 48px; }
+  .premium-header .dart-wordmark { font-size: 27px; }
+  .page-landing .premium-header .nav { position: absolute; top: calc(100% + 12px); left: 0; width: 100%; padding: 17px; gap: 6px; border-radius: 27px; background: linear-gradient(135deg,#fffffff5,#f0eafaf2); border: 1px solid #fff; box-shadow: 0 15px 35px #49306524; transform: translateY(-8px); max-height: calc(100dvh - 110px); overflow-y: auto; }
+  .page-landing .premium-header.topbar--open .nav { transform: translateY(0); }
+  .page-landing .premium-header .nav > a { padding: 14px 15px; font-size: 15px; border-radius: 15px; }
+  .premium-header .header-contact { margin-top: 9px; width: 100%; }
+}
+@media(prefers-reduced-motion:reduce) { .premium-header .nav,.premium-header .header-contact,.page-landing .premium-header .nav > a { transition: none; } }

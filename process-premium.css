@@ -1,0 +1,63 @@
+.page-landing #process.process-premium { padding: 75px 0 85px; background: radial-gradient(ellipse at 18% 46%,#dceeff80,transparent 53%),radial-gradient(ellipse at 83% 64%,#e9dffb70,transparent 55%),linear-gradient(180deg,#f7f6fc 0%,#f8faff 38%,#faf8fe 72%,#fff 100%); border-top-color: transparent; scroll-margin-top: 110px; }
+#process .process-heading { text-align: center; max-width: 800px; margin: 0 auto 36px; }
+#process .process-eyebrow { color: #9b82ad; font-size: 10px; letter-spacing: .15em; margin-bottom: 18px; }
+#process .process-heading h2 { color: #30263e; font-size: clamp(30px,3.2vw,44px); font-weight: 500; letter-spacing: -.045em; line-height: 1.15; }
+#process .process-heading > p:last-child { color: #82758e; font-size: 14px; line-height: 1.8; margin: 20px auto 0; max-width: 650px; }
+#process .process-panel { display: grid; grid-template-columns: minmax(0,1fr) 205px; gap: 30px; align-items: center; padding: 42px 34px; border: 1px solid #fff; border-radius: 32px; background: radial-gradient(ellipse at 55% 45%,#e4def74d,transparent 65%),linear-gradient(130deg,#ffffffc9,#ffffff70); box-shadow: 0 14px 45px -25px #77559a29,inset 0 1px 0 #fff; backdrop-filter: blur(14px); }
+#process .process-slides { display: grid; min-width: 0; }
+#process .process-slide { grid-area: 1/1; display: grid; grid-template-columns: 1.1fr 1fr; gap: 15px; align-items: center; min-width: 0; }
+/* Keep all steps in layout so neither cycling nor manual choices cause page jumps. */
+#process .process-slide[hidden] { display: grid; visibility: hidden; pointer-events: none; }
+#process .process-step-count { font-size: 10px; letter-spacing: .13em; color: #a087b2; }
+#process .process-copy h3 { margin: 15px 0 18px; color: #775393; font-weight: 500; font-size: 36px; letter-spacing: -.04em; }
+#process .process-copy > p { color: #817489; font-size: 13px; line-height: 1.85; }
+#process .process-copy ul { padding: 0; margin: 25px 0 0; list-style: none; display: grid; gap: 12px; }
+#process .process-copy li { position: relative; padding-left: 18px; color: #74617f; font-size: 12px; line-height: 1.7; }
+#process .process-copy li::before { content: ''; position: absolute; width: 5px; height: 5px; border-radius: 50%; background: #b594ce; top: 8px; left: 0; box-shadow: 0 0 0 3px #b594ce12; }
+#process .process-art { min-width: 0; mix-blend-mode: multiply; }
+#process .process-art img { display: block; width: 100%; height: auto; animation: process-float 9s ease-in-out infinite; animation-play-state: paused; }
+#process .process-panel[data-running="true"] .process-slide:not([hidden]) img { animation-play-state: running; }
+@keyframes process-float { 50% { transform: translateY(-6px); } }
+#process .process-tabs { display: grid; gap: 10px; }
+#process .process-tab { position: relative; display: flex; align-items: center; gap: 15px; padding: 18px 16px; min-height: 58px; border: 1px solid transparent; border-radius: 16px; background: transparent; color: #93859e; font: 500 13px/1.4 "Inter",sans-serif; text-align: left; cursor: pointer; transition: background .3s,color .3s; }
+#process .process-tab-number { color: #ae9cba; font-size: 10px; }
+#process .process-tab[aria-selected="true"] { background: linear-gradient(110deg,#f1e9fc,#ffffffb3); border-color: #fff; color: #775098; box-shadow: 0 5px 17px #8060950b; }
+#process .process-progress { position: absolute; right: 0; top: 13px; bottom: 13px; width: 3px; border-radius: 4px; background: #e8def1; overflow: hidden; opacity: 0; }
+#process .process-tab[aria-selected="true"] .process-progress { opacity: 1; }
+#process .process-progress i { display: block; width: 100%; height: 100%; background: #a179be; transform: scaleY(var(--process-progress,0)); transform-origin: top; }
+#process .process-pause { display: block; margin: 20px auto 0; border: 0; background: transparent; color: #9b87aa; font: 11px/1.5 "Inter",sans-serif; padding: 8px; cursor: pointer; }
+#process .process-pause[hidden] { display: none; }
+#process :is(.process-tab,.process-pause):focus-visible { outline: 2px solid #9268b2; outline-offset: 3px; }
+@media(hover:hover) { #process .process-tab:hover { background: #ffffff94; color: #775098; } }
+@media(max-width:1100px) { #process .process-panel { grid-template-columns: minmax(0,1fr) 175px; gap: 15px; padding: 30px 23px; } #process .process-slide { grid-template-columns: 1.2fr .8fr; } }
+@media(max-width:800px) {
+  #process .process-panel { grid-template-columns: 1fr; }
+  #process .process-tabs { grid-template-columns: repeat(5,minmax(0,1fr)); gap: 5px; }
+  #process .process-tab { flex-direction: column; gap: 6px; padding: 12px 5px; font-size: 11px; text-align: center; }
+  #process .process-pause { margin-top: 10px; }
+}
+@media(max-width:560px) {
+  .page-landing #process.process-premium { padding: 50px 0 55px; }
+  #process .container { width: calc(100% - 32px); }
+  #process .process-heading { text-align: left; }
+  #process .process-panel { padding: 27px 20px 18px; border-radius: 28px; }
+  #process .process-slide { grid-template-columns: 1fr; gap: 10px; }
+  #process .process-copy h3 { font-size: 30px; }
+  #process .process-art { width: 240px; max-width: 100%; margin: auto; }
+  #process .process-tabs { grid-template-columns: repeat(5,minmax(0,1fr)); gap: 7px; }
+  #process .process-tab { flex-direction: row; justify-content:center; font-size: 13px; gap: 0; padding: 12px 4px; min-height: 48px; border:1px solid #ffffffb3; background:#ffffff65; }
+  #process .process-tab-number { font-size:14px; color:inherit; }
+  #process .process-tab > span:nth-child(2) { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+}
+@media(prefers-reduced-motion:reduce) { #process .process-art img { animation: none; } #process .process-tab { transition: none; } }
+/* All single-column layouts put stage selection before the content. */
+@media(max-width:800px) {
+  #process .process-navigation { grid-row:1; }
+  #process .process-slides { grid-row:2; }
+}
+/* Blend and feather the image backdrop on every screen size. */
+#process .process-slides { mix-blend-mode:multiply; }
+  #process .process-art img {
+    -webkit-mask-image:radial-gradient(ellipse at center,#000 54%,#000000b3 64%,transparent 73%);
+    mask-image:radial-gradient(ellipse at center,#000 54%,#000000b3 64%,transparent 73%);
+  }
